@@ -1,6 +1,6 @@
 <?php
 
-function get_accepted_ratio($l1, $w1, $l2, $w2, $distance, $n_event)
+function get_accepted_ratio($l1, $w1, $l2, $w2, $loff, $woff, $distance, $n_event)
 {
   $n_accepted = 0;
 
@@ -12,8 +12,8 @@ function get_accepted_ratio($l1, $w1, $l2, $w2, $distance, $n_event)
     $phi = rand()/getrandmax()*2*pi();
     $phi = rand(0, 2*pi());
 
-    $x_low = $x + $distance*tan($theta)*cos($phi);
-    $y_low = $y + $distance*tan($theta)*sin($phi);
+    $x_low = $x + $distance*tan($theta)*cos($phi) + $loff;
+    $y_low = $y + $distance*tan($theta)*sin($phi) + $woff;
 
     if($x_low>-0.5*$l2 and $x_low<0.5*$l2 and $y_low>-0.5*$w2 and $y_low<0.5*$w2) 
     {
