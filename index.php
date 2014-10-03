@@ -16,7 +16,7 @@
 
     <hr>
     <form name="input_form" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-      <table border="1">
+      <table border='1'>
 	<tr>
 	  <td>
 	    Upper counter
@@ -39,7 +39,7 @@
 	</tr>
 	<tr>
 	  <td>
-	    Offset Between Planes:
+	    Offset Between Planes
 	  </td>
 	  <td>
 	    Length: <input type="number" name="loff" value=0 step=0.000001>cm  
@@ -49,7 +49,7 @@
 	</tr>
 	<tr>
 	  <td>
-	    Distance between two counters:
+	    Distance Between Two Counters
 	  </td>
 	  <td>
 	    <input type="number" name="distance" step=0.000001>cm
@@ -57,7 +57,7 @@
 	</tr>
 	<tr>
 	  <td>
-	    Normalized rate:
+	    Normalized Rate
 	  </td>
 	  <td>
 	    <input type="number" name="norm_rate" value=1 step=0.000001>/cm2/min
@@ -65,7 +65,7 @@
 	</tr>
 	<tr>
 	  <td>
-	    Number of generated MC events:<br>
+	    Number of Generated MC Events:<br>
 	  </td>
 	  <td>
 	    <input type="number" name="n_event" value=40000>
@@ -103,20 +103,23 @@ $accepted_ratio = get_accepted_ratio($l1, $w1, $l2, $w2, $loff, $woff, $distance
 $rate = $l1*$w1*$norm_rate*$accepted_ratio;
 $accepted_ratio = 100*$accepted_ratio;
 
-echo "<h3>Parameters:</h3>";
-echo "Upper counter:<br>";
-echo "Length: <b>".$l1."cm</b> &nbsp &nbsp &nbsp &nbsp Width: <b>".$w1."cm</b><br>";
-echo "Lower counter:<br>";
-echo "Length: <b>".$l2."cm</b> &nbsp &nbsp &nbsp &nbsp Width: <b>".$w2."cm</b><br>";
-echo "Offset Between Planes:<br>";
-echo "Length Direction: <b>".$loff."cm</b> &nbsp &nbsp &nbsp &nbsp Width Direction: <b>".$woff."cm</b><br>";
-echo "Distance between two counters: <b>".$distance."cm</b><br>";
-echo "Normalized rate: <b>".$norm_rate."/cm2/min</b><br>";
-echo "<h3>Calculated results:</h3>";
+echo "<h3>Parameters</h3>";
+echo "<table border='1'>";
+echo "<tr><td>Upper counter</td>";
+echo "<td>Length: <b>".$l1."cm</b> &nbsp &nbsp &nbsp &nbsp Width: <b>".$w1."cm</b></td></tr>";
+echo "<tr><td>Lower counter</td>";
+echo "<td>Length: <b>".$l2."cm</b> &nbsp &nbsp &nbsp &nbsp Width: <b>".$w2."cm</b></td></tr>";
+echo "<tr><td>Offset Between Planes</td>";
+echo "<td>Length: <b>".$loff."cm</b> &nbsp &nbsp &nbsp &nbsp Width: <b>".$woff."cm</b></td></tr>";
+echo "<tr><td>Distance between two counters &nbsp </td><td><b>".$distance."cm</b></td></tr>";
+echo "<tr><td>Normalized rate</td><td><b>".$norm_rate."/cm2/min</b></td></tr>";
+echo "</table>";
+echo "<h3>Calculated results</h3>";
 echo "<b>".number_format($accepted_ratio,2)."%</b> particles passing the upper counter are accepted by the lower counter.<br>";
 echo "The event rate is estimated to be: <b>".number_format($rate, 2)." /min</b>.<br>";
 }
 else echo "<h1>Please give input parameters in the form!</h1>";
 }
+echo "<br><br><br><br>";
 
 ?>
