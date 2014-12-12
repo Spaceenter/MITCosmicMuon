@@ -21,6 +21,8 @@
 	<h3>Please contact weisun@mit.edu for any question.</h3>
 	<hr>
 
+	<img src="scheme.png" style="width:600px;height=400px">
+
 <?php
 
 include_once("muon.php");
@@ -65,8 +67,6 @@ if($_POST)
 echo "<br><br><br><br>";
 
 ?>
-
-	<img src="scheme.png" style="width:750px;height=500px">
 
 	<hr>
 	<form name="input_form" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
