@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<style type="text/css">
 	th { white-space: nowrap; font-weight: 400; font-style: italic;}
-	.input-group { max-width: 20rem }
+	.input-group { max-width: 15rem }
 	</style>
 
 	<title>MIT Cosmic Muon</title>
